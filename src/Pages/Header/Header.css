@@ -1,0 +1,39 @@
+.backgorund-banner {
+  /* background-image: url(../../assets/images/Rectangle_1.png); */
+  /* filter: brightness(50%); */
+  background-image: linear-gradient(to right, red,orange,yellow,green,blue,indigo,violet);
+}
+.navbar-container {
+  align-items: center;
+  justify-content: space-between;
+}
+.navbar-container .element-links {
+  margin-left: 10px;
+  color: #ffffff;
+  font-size: 16px;
+  line-height: 20px;
+}
+.search-bar {
+  border: none;
+  margin-left: 80px;
+  width: 370px;
+  height: 44px;
+  text-align: left;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid #ffffff;
+  border-radius: 5px;
+}
+::placeholder {
+  color: white;
+}
+.search-bar input {
+  border: none;
+  padding: 5px 10px;
+  background: rgba(255, 255, 255, 0.01);
+  width: 325px;
+  font-weight: bolder;
+}
+
+.icon {
+  margin-left: 10px;
+}

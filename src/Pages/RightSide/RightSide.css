@@ -1,0 +1,8 @@
+.rightNav{
+    /* border: 1px solid blue; */
+    width: 600px;
+    display: flex;
+    height: 600px;
+    flex-wrap: nowrap;
+    margin-top: 100px;
+}

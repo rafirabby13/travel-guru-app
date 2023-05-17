@@ -1,0 +1,15 @@
+.para-card {
+  /* border: 1px solid blue; */
+  margin-left: -124px;
+  margin-top: 100px;
+  width: 600px;
+  
+}
+.card-name {
+  
+  font-weight: 400;
+  font-size: 97.6842px;
+  line-height: 117px;
+
+  color: #e9a9a9;
+}
