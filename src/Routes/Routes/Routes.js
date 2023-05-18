@@ -5,6 +5,7 @@ import RightSide from "../../Pages/RightSide/RightSide.js";
 import Category from "../../Pages/Category/Category.js";
 import Login from "../../Pages/Login/Login.js";
 import Register from "../../Pages/Register/Register.js";
+import BookingForm from "../../Pages/BookingForm/BookingForm.js";
 
 export const router = createBrowserRouter([
     {
@@ -29,10 +30,11 @@ export const router = createBrowserRouter([
                 path:'/register',
                 element:<Register></Register>
             },
-            // {
-            //     path:'/',
-            //     element:<RightSide></RightSide>
-            // }
+            {
+                path:'/booking',
+                element:<BookingForm></BookingForm>
+            },
+           
         ]
     }
 

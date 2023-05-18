@@ -1,5 +1,5 @@
 import React from "react";
-import { useLoaderData } from "react-router-dom";
+import { useLoaderData, useNavigate } from "react-router-dom";
 import Button from "react-bootstrap/Button";
 import "./Category.css";
 import { BsArrowRight } from "react-icons/bs";
@@ -8,6 +8,13 @@ const Category = () => {
   const data = useLoaderData();
   const {  name, description } = data;
   console.log("category", data);
+  const navigate = useNavigate();
+
+  const handleClick=()=>{
+   navigate('/booking');
+  }
+
+
   return (
     <div className="para-card">
       <p className="card-name"> {name}</p>
@@ -18,7 +25,7 @@ const Category = () => {
         <p>{description}</p>
       
       }
-      <Button variant="warning">Booking  <BsArrowRight></BsArrowRight></Button>
+      <Button onClick={handleClick} variant="warning">Booking  <BsArrowRight></BsArrowRight></Button>
     </div>
   );
 };

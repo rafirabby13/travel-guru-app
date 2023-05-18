@@ -4,11 +4,13 @@ import Card from "react-bootstrap/Card";
 // import Sreemongol from '../../assets/images/Sreemongol.png';
 // import sundorbon from '../../assets/images/sundorbon.png';
 import "./Categories.css";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { Button } from "react-bootstrap";
 
 const Categories = ({ data }) => {
   const { id, img, name } = data;
   console.log(data);
+
   return (
     <div className="category ">
       <Link to={`/categories/${id}`}>
