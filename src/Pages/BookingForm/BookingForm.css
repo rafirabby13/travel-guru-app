@@ -1,4 +1,9 @@
 .booking-form{
-    border: 1px solid blue;
+    /* border: 1px solid blue; */
     padding: 30px;
+    box-shadow: 1px 5px 13px rgb(176, 240, 238);
+    border-radius: 13px;
+}
+.form{
+    display: flex;
 }

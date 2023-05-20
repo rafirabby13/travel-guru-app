@@ -13,6 +13,7 @@
   height: 416px;
   margin-right: 20px;
   border-radius: 20px;
+  box-shadow: 5px 5px 18px rgb(152, 215, 236);
 }
 .category .name {
   /* position: absolute; */

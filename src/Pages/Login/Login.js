@@ -1,11 +1,17 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { Button, Form } from "react-bootstrap";
 import "./Login.css";
 import { AuthContext } from "../../Context/Context.js";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
+import { Toaster, toast } from 'react-hot-toast';
 
 const Login = () => {
   const { user, loginWithEmailPass } = useContext(AuthContext);
+  const [error, seterror] = useState('');
+  const navigate = useNavigate();
+  const location = useLocation();
+
+  let from = location.state?.from?.pathname || '/';
 
   const handleLogin = (e) => {
     e.preventDefault();
@@ -16,11 +22,14 @@ const Login = () => {
     loginWithEmailPass(email, password)
       .then((result) => {
         const user = result.user;
-        console.log(user);
+        toast('Successfully Logged In')
         form.reset();
+        seterror('');
+        navigate(from, {replace: true});
       })
       .catch((error) => {
         console.log(error);
+        seterror(error.message);
       });
   };
   return (
@@ -49,6 +58,7 @@ const Login = () => {
         <p>
           Don't have an account? <Link  className="text-warning" to="/register"> Register</Link>
         </p>
+        <p className="text-danger">{error}</p>
         <Button variant="warning" type="submit">
           Login
         </Button>

@@ -1,46 +1,51 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Button, Form } from "react-bootstrap";
 import "./BookingForm.css";
+import { AuthContext } from "../../Context/Context.js";
+import { useNavigate } from "react-router-dom";
 
 const BookingForm = () => {
+  const { user } = useContext(AuthContext);
+  const navigate = useNavigate();
+  const handleClick = (event) => {
+    event.preventDefault();
+    navigate('/bookingSuccess');
 
-    const handleClick=(event)=>{
-        event.preventDefault();
-        let date = new Date();
-        let time = date.toLocaleDateString().slice(0,10);
-        // const month = date.getUTCMonth();
-        // const day = date.getUTCDay();
-        // const year = date.getFullYear();
-        console.log(time);
-        console.log(time.slice(0,5));
-        
-    }
+   
+  };
   return (
     <div className="para-card booking-form">
-      <Form style={{ textAlign: "start" }}>
+      <Form onSubmit={handleClick} style={{ textAlign: "start" }}>
         <Form.Group className="mb-3" controlId="formBasicEmail">
           <Form.Label>Origin</Form.Label>
-          <Form.Control type="text" placeholder="Your Starting Point" />
+          <Form.Control
+            type="text"
+            placeholder="Your Starting Point"
+            required
+          />
         </Form.Group>
 
-        <Form.Group className="mb-3"              controlId="formBasicPassword">
-         <Form.Label>Destination</Form.Label>
-          <Form.Control type="text" placeholder="Your Destination" />
+        <Form.Group className="mb-3" controlId="formBasicPassword">
+          <Form.Label>Destination</Form.Label>
+          <Form.Control type="text" placeholder="Your Destination" required />
         </Form.Group>
 
         <Form.Group className="mb-3" controlId="formBasicPassword">
           <Form.Label>From</Form.Label>
-          <Form.Control type="text" placeholder="Your Destination" />
-          <button onClick={handleClick}>Date</button>
+          <div className="form">
+            <Form.Control type="date" placeholder="Start date"  required />
+          </div>
         </Form.Group>
 
         <Form.Group className="mb-3" controlId="formBasicPassword">
           <Form.Label>To</Form.Label>
-          <Form.Control type="text" placeholder="Your Destination" />
+          <div className="form">
+            <Form.Control type="date" placeholder="End date" required />
+          </div>
         </Form.Group>
 
-        <Button variant="primary" type="submit">
-          Start Booking
+        <Button style={{width: "100%", fontWeight: "bolder"}} variant="primary" type="submit">
+          Book
         </Button>
       </Form>
     </div>

@@ -11,10 +11,10 @@ const Main = () => {
   return (
     <div>
       <Header></Header>
-      <Container >
+      <Container className="mt-5">
         <Row >
           
-          <Col lg="5" style={{marginLeft:'-10px'}}>
+          <Col lg="5" style={{marginLeft:'-10px'}} className=" ">
             <Outlet></Outlet>
           </Col>
           <Col lg="7">

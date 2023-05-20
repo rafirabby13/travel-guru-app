@@ -6,6 +6,8 @@ import Category from "../../Pages/Category/Category.js";
 import Login from "../../Pages/Login/Login.js";
 import Register from "../../Pages/Register/Register.js";
 import BookingForm from "../../Pages/BookingForm/BookingForm.js";
+import BookingResult from "../../Pages/BookingForm/BookingResult.js";
+import PrivateRoutse from "../PrivateRoute/PrivateRoutse.js";
 
 export const router = createBrowserRouter([
     {
@@ -32,8 +34,12 @@ export const router = createBrowserRouter([
             },
             {
                 path:'/booking',
-                element:<BookingForm></BookingForm>
+                element:<PrivateRoutse><BookingForm></BookingForm></PrivateRoutse>
             },
+            {
+                path:'/bookingSuccess',
+                element:<BookingResult></BookingResult>
+            }
            
         ]
     }
